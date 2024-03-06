@@ -1,5 +1,8 @@
 :root {
-  --sidebar-width: 0;
+    --sidebar-width: 0;
+    --main-color: #114358;
+    --secondary-color: #F2AA1F;
+    --secondary-text: #F1ECE7;
 }
 
 .App {
@@ -22,6 +25,7 @@ body,
     margin-right: 30px;
     transition: margin-left 0.3s ease-in-out;
     padding-top: 120px;
+    margin-bottom: 40px;
 }
 
 .formContainer {

@@ -13,8 +13,7 @@ export default function CountryForm() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setForm(state);
-        console.log(state);
+        if(state) setForm(state);
     }, []);
 
     const submit = () => {

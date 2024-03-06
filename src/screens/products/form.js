@@ -12,13 +12,21 @@ export default function ProductForm() {
     const {state} = useLocation();
     const navigate = useNavigate();
     const [subcategories, setSubcategories] = useState([]);
+    const [stores, setStores] = useState([]);
 
     useEffect(() => {
-        state.subcategory_id = state.subcategory.id;
-        setForm(state);
+        if(state) {
+            state.subcategory_id = state.subcategory.id;
+            state.store_id = state.store.id;
+            setForm(state);
+        }
 
         axiosInstance.get('subcategory').then((response) => {
             setSubcategories(response.data.results);
+        });
+
+        axiosInstance.get('store').then((response) => {
+            setStores(response.data.results);
         });
     }, []);
 
@@ -28,20 +36,20 @@ export default function ProductForm() {
                 console.log(response);
                 if(response.status === 200) {
                     toast('Product saved', ToastTypes.SUCCESS);
+                    navigate('/products');
                 } else {
                     toast('Request failed', ToastTypes.ERROR);
                 }
-                navigate('/products');
             });
         } else {
             axiosInstance.post('product/', form).then((response) => {
                 console.log(response);
                 if(response.status === 201) {
                     toast('Product created', ToastTypes.SUCCESS);
+                    navigate('/products');
                 } else {
                     toast('Request failed', ToastTypes.ERROR);
                 }
-                navigate('/products');
             });
         }
     }
@@ -71,13 +79,22 @@ export default function ProductForm() {
                     <Text value={form.code} onChange={(value) => setForm({...form, code: value})} label={'code'}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Brand</div>
-                    <Text value={form.code} onChange={(value) => setForm({...form, brand: value})} label={'brand'}/>
+                    <Text value={form.brand} onChange={(value) => setForm({...form, brand: value})} label={'brand'}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Composition</div>
                     <Text value={form.composition} onChange={(value) => setForm({...form, composition: value})} label={'composition'}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Price</div>
                     <Text value={form.price} onChange={(value) => setForm({...form, price: value})} label={'price'}/>
+                    <div className={'mb-3'}/>
+                    <div className={'mb-1'}>Description</div>
+                    <TextArea value={form.description} onChange={(value) => setForm({...form, description: value})} label={'description'}/>
+                    <div className={'mb-3'}/>
+                    <div className={'mb-1'}>Gender</div>
+                    <Select options={[{value: 0, name: 'Female'}, {value: 1, name: 'Male'}, {value: 2, name: 'Any'}]} value={form.gender} onChange={(value) => setForm({...form, gender: value[0]})} label={'gender'}/>
+                    <div className={'mb-3'}/>
+                    <div className={'mb-1'}>Store</div>
+                    <Select options={stores?.map((store) => {return  {value: store.id, name: store.name}})} value={form.store_id} onChange={(value) => setForm({...form, store_id: value[0]})}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Subcategory</div>
                     <Select options={subcategories?.map((cat) => {return  {value: cat.id, name: cat.name}})} value={form.subcategory_id} onChange={(value) => setForm({...form, subcategory_id: value[0]})}/>

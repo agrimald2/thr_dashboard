@@ -58,7 +58,7 @@ export default function SubcategoriesList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'subcategory'} withIndex={true} cols={cols}/>
+                <Table model={'subcategory'} withIndex={true} cols={cols} create={'/subcategories/form'}/>
             </div>
         </div>
     );

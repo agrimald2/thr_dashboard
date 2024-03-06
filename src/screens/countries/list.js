@@ -54,7 +54,7 @@ export default function CountriesList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'country'} withIndex={true} cols={cols}/>
+                <Table model={'country'} withIndex={true} cols={cols} create={'/countries/form'}/>
             </div>
         </div>
     );

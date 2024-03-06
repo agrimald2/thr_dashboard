@@ -57,7 +57,7 @@ export default function CategoriesList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'category'} withIndex={true} cols={cols}/>
+                <Table model={'category'} withIndex={true} cols={cols} create={'/categories/form'}/>
             </div>
         </div>
     );

@@ -13,8 +13,7 @@ export default function CurrencyForm() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setForm(state);
-        console.log(state);
+        if(state) setForm(state);
     }, []);
 
     const submit = () => {

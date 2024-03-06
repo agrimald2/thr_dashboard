@@ -58,7 +58,7 @@ export default function CurrencyList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'currency'} withIndex={true} cols={cols}/>
+                <Table model={'currency'} withIndex={true} cols={cols} create={'/currency/form'}/>
             </div>
         </div>
     );

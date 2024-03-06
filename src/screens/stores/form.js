@@ -14,8 +14,10 @@ export default function StoreForm() {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
-        state.countries = state.country.map((country) => country);
-        setForm(state);
+        if(state) {
+            state.country = state.country.map((country) => country);
+            setForm(state);
+        }
 
         axiosInstance.get('country').then((response) => {
             setCountries(response.data.results);
@@ -62,7 +64,7 @@ export default function StoreForm() {
                     <Text value={form.commission} onChange={(value) => setForm({...form, commission: value})} placeholder={'commission'}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Countries</div>
-                    <Select multi={true} options={countries.map((cat) => {return  {value: cat.id, name: cat.name}})} value={form.countries} onChange={(value) => setForm({...form, countries: value})}/>
+                    <Select multi={true} options={countries.map((cat) => {return  {value: cat.id, name: cat.name}})} value={form.country} onChange={(value) => setForm({...form, country: value})}/>
 
                     <div className={'formButtons'}>
                         <Button name={'Cancel'} variant={'danger'} onClick={() => navigate('/stores')}/>

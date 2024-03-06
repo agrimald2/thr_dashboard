@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 import styles from './table.module.css';
 import axiosInstance from "../../AxiosInstance";
+import {useNavigate} from "react-router-dom";
 
-export default function Table({cols, withIndex, model}) {
+export default function Table({cols, withIndex, model, create}) {
     const [query, setQuery] = useState('');
     const [rows, setRows] = useState([]);
     const [timer, setTimer] = useState(null);
+    const navigate = useNavigate();
 
     const getValueFromString = (object, accessString) => {
         let accessParts = accessString.split(".");
@@ -44,11 +46,12 @@ export default function Table({cols, withIndex, model}) {
             <div className={styles.head}>
                 <div className={styles.searchbar}>
                     <input
-                        placeholder={'Buscar'}
+                        placeholder={'Search'}
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
                     />
                 </div>
+                {create && <div className={styles.addContainer} onClick={() => navigate(create)}>+ Add</div>}
             </div>
 
             <div className={styles.body}>
@@ -64,7 +67,7 @@ export default function Table({cols, withIndex, model}) {
                     <tbody>
                     {rows?.map((row, rowIndex) => (
                         <tr key={rowIndex}>
-                            {withIndex && <td style={{color: '#E72D39', fontWeight: '600'}}>{rowIndex + 1}</td>}
+                            {withIndex && <td style={{color: 'var(--secondary-color)', fontWeight: '600'}}>{rowIndex + 1}</td>}
                             {cols?.map((col, colIndex) => (
                                 <td key={colIndex}>
                                     {col.image ?

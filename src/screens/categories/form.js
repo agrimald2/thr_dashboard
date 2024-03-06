@@ -13,7 +13,7 @@ export default function CategoriesForm() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setForm(state);
+        if(state) setForm(state);
     }, []);
 
     const submit = () => {

@@ -58,7 +58,7 @@ export default function ProductsList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'product'} withIndex={true} cols={cols}/>
+                <Table model={'product'} withIndex={true} cols={cols} create={'/products/form'}/>
             </div>
         </div>
     )

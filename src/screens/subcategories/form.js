@@ -14,9 +14,10 @@ export default function SubcategoryForm() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        state.category_id = state.category.id;
-        setForm(state);
-        console.log(state);
+        if(state) {
+            state.category_id = state.category.id;
+            setForm(state);
+        }
 
         axiosInstance.get('category').then((response) => {
             setCategories(response.data.results);

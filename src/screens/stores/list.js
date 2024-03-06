@@ -59,7 +59,7 @@ export default function StoreList() {
             </DeleteModal>}
 
             <div className={'mainContainer'}>
-                <Table model={'store'} withIndex={true} cols={cols}/>
+                <Table model={'store'} withIndex={true} cols={cols} create={'/stores/form'}/>
             </div>
         </div>
     );

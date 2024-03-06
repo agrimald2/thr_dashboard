@@ -11,14 +11,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.addContainer {
+    border: var(--main-color) solid 1px;
+    align-self: start;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    height: 50px;
+    width: 90px;
+    border-radius: 0 16px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    user-select: none;
+    cursor: pointer;
 }
 
 .searchbar input {
-    width: 430px;
+    margin: 10px 0;
+    max-width: 300px;
+    min-width: 100px;
     background-color: #F3F3F3;
     border: #EDEDED 1px solid;
-    height: 30px;
+    height: 32px;
     font-size: 14px;
     line-height: 21px;
     font-weight: 500;
@@ -29,7 +48,7 @@
 }
 
 .searchbar input:focus {
-    border: #dadada 1px solid;
+    border: var(--main-color) 1px solid;
     border-left: #EDEDED 1px solid;
     outline: none !important;
 }
@@ -45,7 +64,7 @@
 
 .table tbody td {
     white-space: nowrap;
-    padding: 18px 6px;
+    padding: 12px 6px;
     text-align: left;
     border-bottom: 1px solid #E1E1E1;
     color: #16213B;
@@ -53,4 +72,5 @@
 
 .body {
     padding: 0 50px;
+    overflow-x: scroll;
 }
