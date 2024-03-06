@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let baseURL = "http://localhost:8000/api/"
-//let baseURL = "https://thr-backend.camionerosperuanos.org/api/"
+//let baseURL = "http://localhost:8000/api/"
+let baseURL = "https://thr-backend.camionerosperuanos.org/api/"
 let refresh = false;
 
 const axiosInstance = axios.create({
