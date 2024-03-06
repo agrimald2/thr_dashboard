@@ -1,0 +1,102 @@
+.container {
+    z-index: 10001;
+    padding: .65rem 1.25rem ;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+    user-select: none;
+}
+
+.primary {
+    background-color: #0D6EFD;
+    color: #ffffff;
+}
+
+.primary:active {
+    background-color: #0A58CA;
+    color: #ffffff;
+}
+
+.secondary {
+    background-color: #6B747C;
+    color: #ffffff;
+}
+
+.secondary:active {
+    background-color: #4E555B;
+    color: #ffffff;
+}
+
+.success {
+    background-color: #198754;
+    color: #ffffff;
+}
+
+.success:active {
+    background-color: #157347;
+    color: #ffffff;
+}
+
+.warning {
+    background-color: #FFC107;
+    color: #000000;
+}
+
+.warning:active {
+    background-color: #D39E00;
+    color: #000000;
+}
+
+.danger {
+    background-color: #DC3545;
+    color: #ffffff;
+}
+
+.danger:active {
+    background-color: #B02A37;
+    color: #ffffff;
+}
+
+.info {
+    background-color: #0DCAF0;
+    color: #ffffff;
+}
+
+.info:active {
+    background-color: #0B8AB8;
+    color: #ffffff;
+}
+
+.light {
+    background-color: #F8F9FA;
+    color: #000000;
+}
+
+.light:active {
+    background-color: #DDE0E3;
+    color: #000000;
+}
+
+.dark {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.dark:active {
+    background-color: #1A2026;
+    color: #ffffff;
+}
+
+.link {
+    background-color: transparent;
+    color: #0D6EFD;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0) !important;
+}
+
+.link:active {
+    background-color: transparent;
+    color: #0A58CA;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0) !important;
+}

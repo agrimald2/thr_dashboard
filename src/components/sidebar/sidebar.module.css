@@ -1,0 +1,36 @@
+.container {
+    width: var(--sidebar-width);
+    height: 100%;
+    position: fixed;
+    background-color: #FFFFFF;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out;
+    padding-top: 120px;
+    overflow-x: hidden;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.menuItem:hover,
+.subItem:hover {
+    background-color: #e3e3e3;
+}
+
+.subItem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 40px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}

@@ -1,0 +1,91 @@
+.container {
+    width: 300px;
+    height: 60px;
+    background-color: red;
+    position: absolute;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1rem 1rem 0;
+    padding: 0 1rem;
+    z-index: 998;
+    text-align: left;
+    font-weight: 500;
+}
+
+.progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    height: 4px;
+    background-color: #ccc;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.toastBottomRight {
+    bottom: 0;
+    right: 0;
+}
+
+.toastSuccess {
+    background-color: #01B20B;
+    color: #ffffff;
+}
+
+.toastWarning {
+    background-color: #EDBA0F;
+    color: #ffffff;
+}
+
+.toastError {
+    background-color: #E23E31;
+    color: #ffffff;
+}
+
+.toastInfo {
+    background-color: #2C8BD1;
+    color: #ffffff;
+}
+
+.toastDark {
+    background-color: #110F10;
+    color: #ffffff;
+}
+
+.progressBarSuccess {
+    background-color: #A8E8AD;
+}
+
+.progressBarError {
+    background-color: #E4C9C3;
+}
+
+.progressBarWarning {
+    background-color: #F8E9B0;
+}
+
+.progressBarInfo {
+    background-color: #B6DCF3;
+}
+
+.progressBarDarkSuccess {
+    background-color: #01B20B;
+}
+
+.progressBarDarkError {
+    background-color: #E23E31;
+}

@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    user-select: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.8rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: text;
+    color: #6B768C;
+    overflow-x: hidden;
+}
+
+.input {
+    outline: none;
+    border: none;
+    font-size: inherit;
+    background-color: transparent;
+    cursor: text;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    color: #000;
+}
+
+.searchIcon {
+    cursor: pointer;
+}
