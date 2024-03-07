@@ -3,7 +3,7 @@ import styles from './table.module.css';
 import axiosInstance from "../../AxiosInstance";
 import {useNavigate} from "react-router-dom";
 
-export default function Table({cols, withIndex, model, create}) {
+export default function Table({cols, withIndex, model, create, filters, children}) {
     const [query, setQuery] = useState('');
     const [rows, setRows] = useState([]);
     const [timer, setTimer] = useState(null);
@@ -30,7 +30,14 @@ export default function Table({cols, withIndex, model, create}) {
         }
 
         const newTimer = setTimeout(() => {
-            const url = `${model}/?name=${query}`;
+            let queryWithFilters = `name=${query}&reference=${query}`;
+            for (const key in filters) {
+                if (filters.hasOwnProperty(key)) {
+                    queryWithFilters += `&${key}=${filters[key]}`;
+                }
+            }
+
+            const url = `${model}/?${queryWithFilters}`;
             axiosInstance.get(url).then((response) => {
                 let results = response.data.results ? response.data.results : response.data
                 setRows(results);
@@ -39,7 +46,7 @@ export default function Table({cols, withIndex, model, create}) {
 
         setTimer(newTimer);
 
-    }, [model, query]);
+    }, [model, query, filters]);
 
     return (
         <div className={styles.container}>
@@ -53,6 +60,10 @@ export default function Table({cols, withIndex, model, create}) {
                 </div>
                 {create && <div className={styles.addContainer} onClick={() => navigate(create)}>+ Add</div>}
             </div>
+
+            {children && <div style={{paddingBottom: '20px'}}>{children}</div>}
+
+
 
             <div className={styles.body}>
                 <table className={`${styles.table} table table-hover`}>
