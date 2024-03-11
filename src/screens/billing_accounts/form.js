@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
 import {Button, Select, Text} from "../../ajonjolib/inputs/ajonjolinput";
@@ -10,6 +10,19 @@ export default function BillingAccountForm() {
     const navigate = useNavigate();
     const [form, setForm] = useState({});
     const {state} = useLocation();
+
+    useEffect(() => {
+        if(state) {
+            setForm(state);
+        } else {
+            setForm({
+                name: '',
+                payment_method: 0,
+                key_1: '',
+                key_2: '',
+            });
+        }
+    }, []);
 
     const submit = () => {
         if(state) {
