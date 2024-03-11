@@ -15,6 +15,8 @@ import CurrencyForm from "./screens/currencies/form";
 import SubcategoryForm from "./screens/subcategories/form";
 import StoreForm from "./screens/stores/form";
 import ProductForm from "./screens/products/form";
+import BillingAccounts from "./screens/billing_accounts/list";
+import BillingAccountForm from "./screens/billing_accounts/form";
 
 function LoginRedirect() {
     useEffect(() => {
@@ -43,6 +45,8 @@ export default function RouteContainer() {
             <Route path={'/stores/form'} element={<StoreForm/>}/>
             <Route path={'/orders'} element={<OrderList/>}/>
             <Route path={'/payments'} element={<PaymentList/>}/>
+            <Route path={'/billing_accounts'} element={<BillingAccounts/>}/>
+            <Route path={'/billing_accounts/form'} element={<BillingAccountForm/>}/>
         </Routes>
     );
 }

@@ -31,6 +31,7 @@ export default function Sidebar() {
                 {name: 'Payments', icon: faMoneyBill, url: '/payments'},
             ], icon: faMoneyBills, isOpen: false },
         { name: 'Configuration', items: [
+                {name: 'Billing Accounts', icon: faCog, url: '/billing_accounts'},
                 {name: 'Countries', icon: faGlobe, url: '/countries'},
                 {name: 'Currencies', icon: faCoins, url: '/currency'},
             ],

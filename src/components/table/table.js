@@ -30,7 +30,7 @@ export default function Table({cols, withIndex, model, create, filters, children
         }
 
         const newTimer = setTimeout(() => {
-            let queryWithFilters = `name=${query}&reference=${query}`;
+            let queryWithFilters = `name=${query}&reference=${query}&description=${query}`;
             for (const key in filters) {
                 if (filters.hasOwnProperty(key)) {
                     queryWithFilters += `&${key}=${filters[key]}`;
