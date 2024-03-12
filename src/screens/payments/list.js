@@ -85,6 +85,8 @@ export default function PaymentList() {
                             {value: 1, name: 'Apple Pay'},
                             {value: 2, name: 'Mercadopago'},
                             {value: 3, name: 'Crypto'},
+                            {value: 4, name: 'Culqui'},
+                            {value: 5, name: 'Stripe'},
                         ]}/>
                         <div className={'mx-2'}/>
                         <Select style={{minWidth: '200px'}} value={filters?.status} onChange={(val) => {
