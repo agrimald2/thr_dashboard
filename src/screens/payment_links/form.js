@@ -11,13 +11,18 @@ export default function PaymentLinksForm() {
     const [form, setForm] = useState({reference: 'test'});
     const {state} = useLocation();
     const [currencies, setCurrencies] = useState([]);
+    const [billingAccounts, setBillingAccounts] = useState([]);
 
     useEffect(() => {
         axiosInstance.get('currency/').then((response) => {
             setCurrencies(response.data.results);
         });
+        axiosInstance.get('billing_account/').then((response) => {
+            setBillingAccounts(response.data.results);
+        });
         if(state) {
             state.currency_id = state.currency.id;
+            state.billing_account_id = state.billing_account.id;
             setForm(state);
         }
     }, []);
@@ -61,6 +66,12 @@ export default function PaymentLinksForm() {
                         setForm({...form, currency_id: val[0]});
                     }}
                             options={currencies.map((cur, index) => {return {value: cur.id, name: cur.name}})}/>
+                    <div className={'mb-3'}/>
+                    <div className={'mb-1'}>Billing Account</div>
+                    <Select style={{minWidth: '200px'}} value={form?.billing_account_id} onChange={(val) => {
+                        setForm({...form, billing_account_id: val[0]});
+                    }}
+                            options={billingAccounts.map((cur, index) => {return {value: cur.id, name: cur.name}})}/>
                     <div className={'mb-3'}/>
                     <div className={'mb-1'}>Description</div>
                     <TextArea value={form.description} onChange={(value) => setForm({...form, description: value})} label={'Name'}/>

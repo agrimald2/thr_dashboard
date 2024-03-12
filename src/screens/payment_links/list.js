@@ -17,6 +17,7 @@ export default function PaymentLinksList() {
         {title: 'Reference', internal: 'reference'},
         {title: 'Amount', internal: 'amount'},
         {title: 'Currency', internal: 'currency.name'},
+        {title: 'Account', internal: 'billing_account.name'},
         {title: 'Payed', internal: 'payed', code: (row, data) => {
                 return (data === true ? 'Yes' : 'No');
 
