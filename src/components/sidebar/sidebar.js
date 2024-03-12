@@ -7,7 +7,7 @@ import {
     faBox,
     faCog,
     faCoins, faDashboard,
-    faGlobe,
+    faGlobe, faLink,
     faMoneyBill, faMoneyBills,
     faShop, faStar
 } from "@fortawesome/free-solid-svg-icons";
@@ -31,6 +31,7 @@ export default function Sidebar() {
                 {name: 'Payments', icon: faMoneyBill, url: '/payments'},
             ], icon: faMoneyBills, isOpen: false },
         { name: 'Configuration', items: [
+                {name: 'Payment Links', icon: faLink, url: '/payment_links'},
                 {name: 'Billing Accounts', icon: faCog, url: '/billing_accounts'},
                 {name: 'Countries', icon: faGlobe, url: '/countries'},
                 {name: 'Currencies', icon: faCoins, url: '/currency'},
